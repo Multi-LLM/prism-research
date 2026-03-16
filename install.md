@@ -22,7 +22,7 @@ b'bar'
 ### Download sglang-mulit-model and kvcached
 ```bash
 # install sglang-muli-model
-git clone https://github.com/shanyu-sys/sglang-multi-model.git
+git clone https://github.com/Multi-LLM/prism-research.git
 
 # install kvcached
 git clone https://github.com/ovg-project/kvcached.git
@@ -33,7 +33,7 @@ git clone https://github.com/ovg-project/kvcached.git
 1. Start a container running in the background.
 ```bash
 docker run -dit --gpus all --ipc=host --network=host \
-    -v `pwd`/sglang-multi-model:/sgl-workspace/sglang-multi-model/ \
+    -v `pwd`/prism-research:/sgl-workspace/sglang-multi-model/ \
     -v `pwd`/kvcached:/sgl-workspace/kvcached \
     -v ~/.cache/huggingface/:/root/.cache/huggingface \
     --name dev-sglang-{your_name} \
@@ -42,7 +42,7 @@ docker run -dit --gpus all --ipc=host --network=host \
 If you are using H100 from the SGLang team, change the mount directory of `.cache`.
 ```bash
 docker run -dit --gpus all --ipc=host --network=host \
-    -v `pwd`/sglang-multi-model:/sgl-workspace/sglang-multi-model/ \
+    -v `pwd`/prism-research:/sgl-workspace/sglang-multi-model/ \
     -v `pwd`/kvcached:/sgl-workspace/kvcached \
     -v /opt/dlami/nvme/.cache:/root/.cache \
     --env "HF_TOKEN={your_huggingface_token}" \
